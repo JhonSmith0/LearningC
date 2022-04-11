@@ -20,13 +20,11 @@ int pop (list *); // remove o ultimo elemento
 int showAll(list *); // Mostrar o conteudo da lista
 int insert(list *, int, char); // Adiciona em um index especifico
 int remover(list *, int); // Remove em um index especifico
-int pushString(list *, char[]); // Copia uma string para dentro da lista
 
 // Iniciar
 int main()
 {
     list *newList = criarLista();
-    pushString(newList, "jhon");
     showAll(newList);
     return 1;
 }
@@ -82,16 +80,6 @@ int insert(list *lista, int index, char letter) {
     lista->length++;
 
     return 1;
-};
-
-int pushString(list *lista, char name[]) {
-    int index;
-    for (index = 0; index < sizeof(name) / 2; index++) {
-        push(lista, name[index]);
-    };
-
-    return 1;
-
 };
 
 int remover (list *lista, int index) {
